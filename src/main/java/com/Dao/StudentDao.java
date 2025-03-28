@@ -18,13 +18,13 @@ public class StudentDao {
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "root");
 	}	
 	//Save Admin
-	public static int insertAdmin(int id,String name,int contact,String email,String password) throws SQLException, ClassNotFoundException {
+	public static int insertAdmin(int id,String name,String email,long contact,String password) throws SQLException, ClassNotFoundException {
 		Connection con=getConnection();
 		PreparedStatement pst=con.prepareStatement("insert into admin values(?,?,?,?,?)");
 		pst.setInt(1, id);
 		pst.setString(2,name);
 		pst.setString(3, email);
-		pst.setInt(4, contact);
+		pst.setLong(4, contact);
 		pst.setString(5, password);
 		return pst.executeUpdate();
 	}	
