@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <style>
 body {
-            background: linear-gradient(135deg, #007bff, #00c6ff);
+            background: linear-gradient(135deg, #a044ff, #6a3093);
             display: flex;
             justify-content: center;
             align-items: center;

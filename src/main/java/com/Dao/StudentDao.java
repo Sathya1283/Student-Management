@@ -85,4 +85,21 @@ public class StudentDao {
 			list.add(e);
 		}
 		return list;
-	}}
+	}
+	
+	public boolean updateStudent(StudentDto student) throws ClassNotFoundException, SQLException {
+	     try(Connection con = getConnection();
+	         PreparedStatement pst = con.prepareStatement("update student set name = ?, physics = ?, chemistry = ?, maths = ? where id = ?")){ 
+	        pst.setString(1, student.getName());
+	        pst.setInt(2, student.getPhysics());
+	        pst.setInt(3, student.getChemistry());
+	        pst.setInt(4, student.getMaths());
+	        pst.setInt(5, student.getId());
+	        return pst.executeUpdate() > 0;
+	     }
+	        catch (SQLException e) {
+	            e.printStackTrace();
+	            return false;
+	        }
+	}
+}

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <style>
  body {
-             background: linear-gradient(135deg, #ff416c, #e9e4f0);
+             background: linear-gradient(135deg, #11998e, #38ef7d);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,7 +16,7 @@
             font-family: Arial, sans-serif;
         }
 
-        .signup-box {
+        .add-box {
              background-color: #fff;
             padding: 40px;
             border-radius: 12px;
@@ -24,19 +24,19 @@
             width: 400px;
         }
 
-        .signup-box h2 {
+        .add-box h2 {
             margin-bottom: 20px;
             color: #343a40;
         }
 
-        .signup-box label {
+        .add-box label {
             margin: 8px 0;
             display: block;
             color: #495057;
             font-weight: 600;
         }
 
-        .signup-box input[type="text"], .signup-box input[type="email"], .signup-box input[type="password"] {
+        .add-box input[type="text"], .add-box input[type="number"] {
             width: 100%;
             padding: 12px;
             margin: 5px 0 15px;
@@ -47,7 +47,7 @@
             transition: border-color 0.3s ease;
         }
 
-        .signup-box input:focus {
+        .add-box input:focus {
             border-color: #0d6efd;
             outline: none;
         }
@@ -56,7 +56,7 @@
             border-color: red;
         }
 
-        .signup-box button {
+        .add-box button {
             background-color: #0d6efd;
             color: #fff;
             padding: 12px;
@@ -68,44 +68,27 @@
             transition: background-color 0.3s ease;
         }
 
-        .signup-box button:hover {
+        .add-box button:hover {
             background-color: #0a58ca;
         }
-        #n1{
-        text-decoration: none;
-          color:white;
-        }
     </style>
-    <script>
-        function validatePassword() {
-            const password = document.getElementById("password").value;
-            const repassword = document.getElementById("repassword");
-            if (password !== repassword.value && repassword.value !== "") {
-                repassword.classList.add("error");
-            } else {
-                repassword.classList.remove("error");
-            }
-        }
-    </script>
 </head>
 <body>
-<form action="student1" method="post">
- <div class="signup-box">
-        <h2>Signup</h2>
+<form action="add" method="post">
+  <div class="add-box">
+   <h2>Add Student</h2>
         <label for="id">ID</label>
         <input type="text" id="id" name="id" required>
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-         <label for="contact">Contact</label>
-        <input type="text" id="contact" name="contact" required>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required oninput="validatePassword()">
-        <label for="repassword">Re-enter Password</label>
-        <input type="password" id="repassword" name="repassword" required oninput="validatePassword()">
+        <label for="physics">Physics</label>
+        <input type="number" id="physics" name="physics" required>
+         <label for="chemistry">Chemistry</label>
+        <input type="number" id="chemistry" name="chemistry" required>
+        <label for="maths">Maths</label>
+        <input type="number" id="maths" name="maths" required >
         <button type="submit">Submit</button>
-    </div>
+        </div>
 </form>
 </body>
 </html>

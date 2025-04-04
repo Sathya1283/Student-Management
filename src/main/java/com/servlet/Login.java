@@ -23,6 +23,7 @@ public class Login extends HttpServlet{
 			boolean result=StudentDao.findAdmin(email, password);
 			if (result == true) {
 				 resp.getWriter().println("<h3 style='color:green;'>Login Successful!</h3>");
+				 req.getRequestDispatcher("adminhome.jsp").include(req, resp);
 		        } else {
 		        	resp.getWriter().println("<h3 style='color:red;'>Login Failed!</h3>");
 		        }
@@ -31,6 +32,6 @@ public class Login extends HttpServlet{
 			e.printStackTrace();
 		}
 		
-		req.getRequestDispatcher("adminhome.jsp").include(req, resp);
+		//req.getRequestDispatcher("adminhome.jsp").include(req, resp);
 		}
 }
